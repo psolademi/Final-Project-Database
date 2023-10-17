@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Book Club</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Books</a>
+        <a href="#">Events</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Welcome to our book club! We are a group of passionate readers who love to discuss and share our thoughts on various books.</p>
+
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>Book Discussion: "Book Title" - Date & Time</li>
+            <li>Author Meetup: "Author Name" - Date & Time</li>
+        </ul>
+
+        <h2>Featured Books</h2>
+        <div>
+            <img src="book1.jpg" alt="Book 1">
+            <p>Book Title 1</p>
+        </div>
+        <div>
+            <img src="book2.jpg" alt="Book 2">
+            <p>Book Title 2</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Book Club</p>
+    </footer>
+</body>
+</html>

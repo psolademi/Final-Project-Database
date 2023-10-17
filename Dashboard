@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club Dashboard</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .book-list {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .book-form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Book Club Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <h2>Book Collection</h2>
+        <div class="book-list">
+            <ul>
+                <li>Book 1: Author 1</li>
+                <li>Book 2: Author 2</li>
+                <li>Book 3: Author 3</li>
+                <!-- Add more books here -->
+            </ul>
+        </div>
+
+        <h2>Add a New Book</h2>
+        <div class="book-form">
+            <form>
+                <label for="bookTitle">Title:</label>
+                <input type="text" id="bookTitle" name="bookTitle" required>
+                <br>
+                <label for="bookAuthor">Author:</label>
+                <input type="text" id="bookAuthor" name="bookAuthor" required>
+                <br>
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Book Club</p>
+    </footer>
+</body>
+</html>
