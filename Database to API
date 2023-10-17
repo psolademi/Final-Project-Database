@@ -1,0 +1,59 @@
+const express = require('express');
+const bodyParser = require('body-parser'); // For parsing JSON request bodies
+const mysql = require('mysql'); // Replace with the appropriate database library
+
+const app = express();
+const port = 3000; // Choose a port for your API
+
+// Create a database connection
+const db = mysql.createConnection({
+    host: 'your_database_host',
+    user: 'your_database_user',
+    password: 'your_database_password',
+    database: 'your_database_name'
+});
+
+// Connect to the database
+db.connect(err => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database');
+});
+
+// Middleware to parse JSON request bodies
+app.use(bodyParser.json());
+
+// Define API endpoints
+app.get('/books', (req, res) => {
+    // Query the database to retrieve a list of books
+    const query = 'SELECT * FROM books';
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Error querying the database:', err);
+            res.status(500).json({ error: 'An error occurred while fetching books.' });
+            return;
+        }
+        res.json(results);
+    });
+});
+
+app.post('/books', (req, res) => {
+    // Insert a new book into the database
+    const { title, author } = req.body;
+    const query = 'INSERT INTO books (title, author) VALUES (?, ?)';
+    db.query(query, [title, author], (err, results) => {
+        if (err) {
+            console.error('Error inserting a new book into the database:', err);
+            res.status(500).json({ error: 'An error occurred while adding a book.' });
+            return;
+        }
+        res.json({ message: 'Book added successfully.' });
+    });
+});
+
+// Start the Express server
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
